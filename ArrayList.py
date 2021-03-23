@@ -46,8 +46,10 @@ class ArrayList:
         if self.capacity == self.length:
             self.capacity *= 2
             new_array = array.array('l', [0]*self.capacity)
+            
             for i in range(index, self.length):
                 new_array[i+1] = self.array[i]
+            
             for i in range(index):
                 new_array[i] = self.array[i]
             self.array = new_array
@@ -66,15 +68,25 @@ class ArrayList:
     def print(self):
         print(self.array.tolist()[:self.length])
 
-my_list = ArrayList(4)
+my_list = ArrayList(8)
 my_list.print()
 
-for i in range(6):
-    my_list.append(i)
+for i in range(10):
+    my_list.append(i + 1)
 my_list.print()
 
-# 소스 코드를 보고 이해하고 다시 작성하는 방식으로 진행했는데 소스 코드에서 length와 capacity가 동일한 상황에 
-# insert함수를 호출하면 해당 index이전의 데이터를 새로운 array에 저장하는 코드가 없어 수정했습니다.
+for i in range(10):
+    my_list.prepend(i + 1)
+my_list.print()
 
-my_list.insert(2, 3)
+value = my_list.access(3)
+print('my_list.access(3) = ' + str(value))
+
+my_list.insert(8, 128)
+my_list.print()
+
+my_list.remove(4)
+my_list.print()
+
+my_list.set_head(10)
 my_list.print()
