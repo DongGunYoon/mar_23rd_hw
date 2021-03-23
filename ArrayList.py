@@ -75,5 +75,7 @@ my_list.print()
 
 # 소스 코드를 보고 이해하고 다시 작성하는 방식으로 진행했는데 소스 코드에서 length와 capacity가 동일한 상황에 
 # insert함수를 호출하면 해당 index이전의 데이터를 새로운 array에 저장하는 코드가 없어 수정했습니다.
+# Test
+
 my_list.insert(2, 3)
 my_list.print()
