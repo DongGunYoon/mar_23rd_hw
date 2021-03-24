@@ -64,8 +64,9 @@ class SinglyLinkedList:
     def print(self):
         cur_node = self.head
         while cur_node.next is not None:
-            print(cur_node.value, end=', ')
+            print(cur_node.value, end=' ')
             cur_node = cur_node.next
+        print(cur_node.value, end=' ')
         print()
 
 my_list = SinglyLinkedList()

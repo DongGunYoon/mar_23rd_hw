@@ -71,15 +71,17 @@ class DoublyLinkedList:
     def print(self):
         cur_node = self.head
         while cur_node.next is not None:
-            print(cur_node.value, end=', ')
+            print(cur_node.value, end=' ')
             cur_node = cur_node.next
+        print(cur_node.value, end=' ')
         print()
 
     def rev_print(self):
         cur_node = self.tail
         while cur_node.prev is not None:
-            print(cur_node.value, end=', ')
+            print(cur_node.value, end=' ')
             cur_node = cur_node.prev
+        print(cur_node.value, end=' ')    
         print()
 
 my_list = DoublyLinkedList()
@@ -88,6 +90,7 @@ for i in range(10):
     my_list.append(i + 1)
 
 my_list.print()
+my_list.rev_print()
 
 for i in range(10):
     my_list.prepend(i + 1)
